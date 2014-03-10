@@ -1,4 +1,18 @@
 /*
+Theme Name: Beachstrap
+Theme URI: http://charityandbiscuits.com
+Description: A handrolled WordPress Twitter Bootstrap theme based on the tutorial at http://www.charityandbiscuits.com
+Version: 1.0
+Tags: responsive, white, bootstrap
+ 
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+License URI: http://creativecommons.org/licenses/by-sa/3.0/
+ 
+Some other comments or urls here that will prove useful reminders to you or another developer
+*/
+
+
+/*
 Author: Mammoth-Interactive
 Description: Beachstrap theme styles
 Date: 31 October 2013 (Happy halloween!)
@@ -20,6 +34,14 @@ Date: 31 October 2013 (Happy halloween!)
 
 ==================================================
 */
+
+@import url('http://fonts.googleapis.com/css?family=Oxygen:400,700,300');
+@import url('http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css');
+@import url('css/bootstrap.css');
+@import url('css/beachstrap-styles.css');
+
+
+
 /* ==================== GENERAL ================== */
 body {
   font-family: 'Oxygen', sans-serif;
