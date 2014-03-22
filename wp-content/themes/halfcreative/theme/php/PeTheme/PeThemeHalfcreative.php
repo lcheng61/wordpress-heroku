@@ -523,7 +523,7 @@ The Page You Are Looking For Cannot Be Found
 							  "label"=>__pe("Background"),
 							  "type"=>"Upload",
 							  "description" => __pe("Background images."),
-							  "default"=> PE_THEME_URL."/images/home-bg.jpg"
+							  "default"=> PE_THEME_URL."/images/home-bg.png"
 							  ),
 						"headlines" => 
 						array(
