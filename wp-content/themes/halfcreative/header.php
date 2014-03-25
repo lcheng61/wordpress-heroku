@@ -21,7 +21,7 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 		<!-- favicon -->
-		<link rel="shortcut icon" href="<?php echo $t->options->get("favicon") ?>" />
+		<link rel="shortcut icon" href="<?php echo $t->options->get("favicon") ?>" />   
 
 		<?php $t->font->load(); ?>
 
