@@ -29,30 +29,26 @@ Promote the database (replace COLOR with the color name from the above output)
     $ heroku pg:promote HEROKU_POSTGRESQL_COLOR
     Promoting HEROKU_POSTGRESQL_COLOR to DATABASE_URL... done
 
+Add the ability to send email (i.e. Password Resets etc)
+
+    $ heroku addons:add sendgrid:starter
+    Adding sendgrid:starter on your-app... done, v14 (free)
+    Use `heroku addons:docs sendgrid` to view documentation.
+
 Create a new branch for any configuration/setup changes needed
 
     $ git checkout -b production
 
-Copy the `wp-config.php`
+Store unique keys and salts in Heroku environment variables. Wordpress can provide random values [here](https://api.wordpress.org/secret-key/1.1/salt/).
 
-    $ cp wp-config-sample.php wp-config.php
-
-Update unique keys and salts in `wp-config.php` on lines 48-55. Wordpress can provide random values [here](https://api.wordpress.org/secret-key/1.1/salt/).
-
-    define('AUTH_KEY',         'put your unique phrase here');
-    define('SECURE_AUTH_KEY',  'put your unique phrase here');
-    define('LOGGED_IN_KEY',    'put your unique phrase here');
-    define('NONCE_KEY',        'put your unique phrase here');
-    define('AUTH_SALT',        'put your unique phrase here');
-    define('SECURE_AUTH_SALT', 'put your unique phrase here');
-    define('LOGGED_IN_SALT',   'put your unique phrase here');
-    define('NONCE_SALT',       'put your unique phrase here');
-
-Clear `.gitignore` and commit `wp-config.php`
-
-    $ >.gitignore
-    $ git add .
-    $ git commit -m "Initial WordPress commit"
+    heroku config:set AUTH_KEY='put your unique phrase here' \
+      SECURE_AUTH_KEY='put your unique phrase here' \
+      LOGGED_IN_KEY='put your unique phrase here' \
+      NONCE_KEY='put your unique phrase here' \
+      AUTH_SALT='put your unique phrase here' \
+      SECURE_AUTH_SALT='put your unique phrase here' \
+      LOGGED_IN_SALT='put your unique phrase here' \
+      NONCE_SALT='put your unique phrase here' \
 
 Deploy to Heroku
 
@@ -67,7 +63,7 @@ Deploy to Heroku
     -----> Compiled slug size is 13.8MB
     -----> Launcing... done, v5
            http://strange-turtle-1234.herokuapp.com deployed to Heroku
-    
+
     To git@heroku:strange-turtle-1234.git
       * [new branch]    production -> master
 
